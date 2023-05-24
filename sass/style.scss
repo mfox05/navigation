@@ -1,0 +1,81 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	font-family: 'Ubuntu', sans-serif;
+	overflow: hidden;
+	color: #fff;
+	background: linear-gradient(10deg, #2483ff 60%, #2c6afb 60%);
+}
+
+nav {
+	margin-top: 100px;
+	background-color: #292929;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	font-size: 24px;
+}
+
+.menu-item {
+	display: inline-block;
+	height: 100px;
+	width: 300px;
+	line-height: 100px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 1s;
+}
+
+.menu-item:hover {
+	background-color: #363636;
+	.dropdown li{
+		display: block;
+		animation: menu .2s forwards;
+	}
+	.dropdown li:nth-child(2){
+		animation-delay: .2s;
+	}
+	.dropdown li:nth-child(3){
+		animation-delay: .4s;
+	}
+	.dropdown li:nth-child(4){
+		animation-delay: .6s;
+	}
+	.dropdown li:nth-child(5){
+		animation-delay: .8s;
+	}
+	.dropdown li:nth-child(6){
+		animation-delay: 1s;
+	}
+}
+
+.dropdown {
+	position: absolute;
+	width: 300px;
+	li {
+		background-color: #50515a;
+		display: none;
+		opacity: 0;
+		transition: color .3s;
+	}
+	li:hover {
+		color: royalblue;
+	}
+}
+
+@keyframes menu{
+	from{
+		opacity: 0;
+		transform: scale(120%);
+	}
+	to{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
